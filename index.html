@@ -1,256 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="x-poe-datastore-behavior" content="local_only">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOCCER iD - En Transformación</title>
+    <title>SOCCERiD - En Transformación</title>
     
     <link rel="icon" href="assets/images/iconsoccerid.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/main.css">
 
     <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
-    <meta property="og:title" content="SOCCER iD - En Transformación">
-    <meta property="og:description" content="En proceso de Transformación">
-    <meta property="og:image" content="https://coomingsoon-soccerid-3b5eb7febf90.herokuapp.com/assets/images/iconsoccerid.png">
-    <meta property="og:url" content="https://coomingsoon-soccerid-3b5eb7febf90.herokuapp.com/">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="SOCCER iD">
+<meta property="og:title" content="SOCCERiD - En Transformación">
+<meta property="og:description" content="En proceso de Transformación">
+<meta property="og:image" content="https://coomingsoon-soccerid-3b5eb7febf90.herokuapp.com/assets/images/iconsoccerid.png">
+<meta property="og:url" content="https://coomingsoon-soccerid-3b5eb7febf90.herokuapp.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SOCCERiD">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SOCCER iD - En Transformación">
-    <meta name="twitter:description" content="En proceso de Transformación">
-    <meta name="twitter:image" content="https://coomingsoon-soccerid-3b5eb7febf90.herokuapp.com/assets/images/iconsoccerid.png">
-    <meta name="twitter:url" content="https://coomingsoon-soccerid-3b5eb7febf90.herokuapp.com/">
-    <meta name="twitter:site" content="@soccerid7">
-    <meta name="twitter:creator" content="@soccerid7">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SOCCERiD - En Transformación">
+<meta name="twitter:description" content="En proceso de Transformación">
+<meta name="twitter:image" content="https://coomingsoon-soccerid-3b5eb7febf90.herokuapp.com/assets/images/iconsoccerid.png">
+<meta name="twitter:url" content="https://coomingsoon-soccerid-3b5eb7febf90.herokuapp.com/">
+<meta name="twitter:site" content="@soccerid7">
+<meta name="twitter:creator" content="@soccerid7">
 
-    <style>
-        /* --- Importación de la Fuente --- */
-        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap');
-
-        /* --- Variables de Color y Configuración General --- */
-        :root {
-            --color-purple: #2a0f4a;
-            --color-background: #0a0a0a;
-            --color-surface: rgba(26, 26, 26, 0.85);
-            --color-primary-text: #ffffff;
-            --color-secondary-text: #a0a0a0;
-            --color-border: #333333;
-            --color-accent: #ffffff;
-            --color-link-footer: #8c70e0;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Raleway', sans-serif;
-            color: var(--color-primary-text);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 2rem;
-            overflow: hidden;
-            background: radial-gradient(ellipse at center, var(--color-purple), var(--color-background));
-            background-size: 200% 200%;
-            animation: background-pan 25s linear infinite;
-        }
-
-        /* --- Contenedor Principal --- */
-        .main-container {
-            background-color: var(--color-surface);
-            padding: 3rem;
-            border-radius: 12px;
-            border: 1px solid var(--color-border);
-            width: 90vw;
-            max-width: 600px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* --- Logo --- */
-        .logo-placeholder {
-            font-size: 2.5rem;
-            font-weight: 900;
-            letter-spacing: 0.5rem;
-            margin-bottom: 2rem;
-            color: var(--color-accent);
-            text-transform: uppercase;
-        }
-
-        /* --- Títulos y Subtítulos --- */
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            min-height: 3.5rem; /* Espacio para el efecto de escritura */
-            position: relative;
-            color: var(--color-accent);
-        }
-
-        /* Cursor parpadeante para el efecto de escritura */
-        h1::after {
-            content: '|';
-            position: absolute;
-            right: -10px;
-            animation: blink 1s infinite;
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            color: var(--color-secondary-text);
-            margin-bottom: 2.5rem;
-            line-height: 1.6;
-            max-width: 450px;
-        }
-
-        /* --- Engranajes --- */
-        .gears-container {
-            position: relative;
-            height: 120px;
-            width: 120px;
-            margin-bottom: 2.5rem;
-        }
-
-        .gear {
-            position: absolute;
-            fill: var(--color-secondary-text);
-            transition: fill 0.3s ease;
-        }
-
-        .gears-container:hover .gear {
-            fill: var(--color-accent);
-        }
-
-        .gear-large {
-            width: 100px;
-            height: 100px;
-            top: 0;
-            left: 0;
-            animation: rotate-cw 10s linear infinite;
-        }
-
-        .gear-small {
-            width: 60px;
-            height: 60px;
-            bottom: 0;
-            right: 0;
-            animation: rotate-ccw 5s linear infinite;
-        }
-
-        /* --- Redes Sociales --- */
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .social-links a {
-            color: var(--color-secondary-text);
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--color-accent);
-            transform: translateY(-3px);
-        }
-
-        .social-links svg {
-            width: 28px;
-            height: 28px;
-        }
-        
-        /* Caso especial para el icono de TikTok con múltiples paths */
-        .social-links a[aria-label="TikTok"]:hover svg path {
-            fill: var(--color-accent);
-        }
-
-        /* --- Pie de Página --- */
-        footer {
-            font-size: 0.9rem;
-            color: var(--color-secondary-text);
-            line-height: 1.5;
-        }
-
-        footer a {
-            color: var(--color-link-footer);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        footer a:hover {
-            color: var(--color-accent);
-            text-decoration: underline;
-        }
-
-        /* --- Animaciones --- */
-        @keyframes background-pan {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes rotate-cw {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes rotate-ccw {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(-360deg); }
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
-        /* --- Diseño Responsivo --- */
-        @media (max-width: 640px) {
-            body {
-                padding: 0;
-            }
-            .main-container {
-                width: 100vw;
-                height: 100vh;
-                padding: 2rem 1.5rem;
-                border-radius: 0;
-                justify-content: center;
-                overflow-y: auto;
-                background-color: transparent;
-                backdrop-filter: none;
-                border: none;
-            }
-
-            h1 {
-                font-size: 1.8rem;
-                min-height: 3rem;
-            }
-
-            .subtitle {
-                font-size: 1rem;
-            }
-
-            .logo-placeholder {
-                font-size: 2rem;
-            }
-        }
-    </style>
 </head>
 <body>
 
     <main class="main-container">
-        <div class="logo-placeholder">SOCCER iD</div>
+        <div class="logo-placeholder"><img src="assets/images/soccerid.png" width="300px"></div>
 
         <h1 id="main-heading"></h1>
 
@@ -259,15 +41,18 @@
         </p>
 
         <div class="gears-container">
+            <!-- SVG de Engranaje Grande (Flat Icon) -->
             <svg class="gear gear-large" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M19.43,12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49,1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46,2.18,14.25,2,14,2h-4c-.25,0-.46.18-.49.42l-.38,2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49,0-.61.22l-2,3.46c-.13.22-.07.49.12.64l2.11,1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11,1.65c-.19.15-.24.42-.12.64l2,3.46c.12.22.39.3.61.22l2.49-1c.52.4,1.08.73,1.69.98l.38,2.65c.03.24.24.42.49.42h4c.25,0,.46-.18.49-.42l.38-2.65c.61-.25,1.17-.59,1.69-.98l2.49,1c.23.09.49,0,.61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65Z M12,15.5c-1.93,0-3.5-1.57-3.5-3.5s1.57-3.5,3.5-3.5,3.5,1.57,3.5,3.5-1.57,3.5-3.5,3.5Z"></path>
             </svg>
+            <!-- SVG de Engranaje Pequeño (Flat Icon) -->
             <svg class="gear gear-small" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M19.43,12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49,1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46,2.18,14.25,2,14,2h-4c-.25,0-.46.18-.49.42l-.38,2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49,0-.61.22l-2,3.46c-.13.22-.07.49.12.64l2.11,1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11,1.65c-.19.15-.24.42-.12.64l2,3.46c.12.22.39.3.61.22l2.49-1c.52.4,1.08.73,1.69.98l.38,2.65c.03.24.24.42.49.42h4c.25,0,.46-.18.49-.42l.38-2.65c.61-.25,1.17-.59,1.69-.98l2.49,1c.23.09.49,0,.61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65Z M12,15.5c-1.93,0-3.5-1.57-3.5-3.5s1.57-3.5,3.5-3.5,3.5,1.57,3.5,3.5-1.57,3.5-3.5,3.5Z"></path>
             </svg>
         </div>
 
         <div class="social-links">
+            <!-- Reemplaza '#' con los enlaces reales de tus redes sociales -->
             <a href="https://www.instagram.com/soccerid7" target="_blank" aria-label="Instagram">
                 <svg viewbox="0 0 24 24" fill="currentColor"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.2,5.2 0 0,1 16.2,21.4H7.8C4.6,21.4 2,18.8 2,15.6V7.8A5.2,5.2 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4A3.6,3.6 0 0,0 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6A3.6,3.6 0 0,0 16.4,4H7.6M17.2,6A1.2,1.2 0 0,1 16,7.2A1.2,1.2 0 0,1 14.8,6A1.2,1.2 0 0,1 16,4.8A1.2,1.2 0 0,1 17.2,6M12,7a5,5 0 0,1 5,5a5,5 0 0,1-5,5a5,5 0 0,1-5-5A5,5 0 0,1 12,7M12,9a3,3 0 0,0-3,3a3,3 0 0,0 3,3a3,3 0 0,0 3-3A3,3 0 0,0 12,9Z"></path></svg>
             </a>
@@ -279,16 +64,26 @@
             </a>
               <a href="https://www.tiktok.com/@soccerid7" target="_blank" aria-label="TikTok">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <!-- Ruta para el efecto de "glitch" más claro -->
                     <path fill="#E4E4E7" d="M20.69 5.65A9.33 9.33 0 0 1 16.6 9.24v6.48a4.22 4.22 0 1 1-4.22-4.22c.02 0 .04 0 .06 0v2.13c-.02 0-.04 0-.06 0a2.09 2.09 0 1 0 2.09 2.09V.51h2.13c.01 1.76.02 3.52.05 5.28a9.48 9.48 0 0 1 4.05-3.4z"></path>
+                    <!-- Ruta para el efecto de "glitch" intermedio -->
                     <path fill="#D4D4D8" d="M16.6 9.24v6.48a4.22 4.22 0 1 1-4.22-4.22c.02 0 .04 0 .06 0v2.13c-.02 0-.04 0-.06 0a2.09 2.09 0 1 0 2.09 2.09V.51h2.13c.01 1.76.02 3.52.05 5.28a9.48 9.48 0 0 1 4.05-3.4z"></path>
+                    <!-- Ruta principal de la nota musical -->
                     <path fill="#A1A1AA" d="M12.44 15.72a4.22 4.22 0 1 1-4.22-4.22c.02 0 .04 0 .06 0v2.13c-.02 0-.04 0-.06 0a2.09 2.09 0 1 0 2.09 2.09V.51h2.13v15.21z"></path>
                 </svg>
             </a>
+
         </div>
 
-        <footer>
-            <p>© 2026 SOCCER iD. Todos los derechos reservados. | <a href="/politicas-privacidad.html">Políticas de Privacidad</a></p> | <a href="/terminos-y-condiciones.html">Términos y condiciones del sitio</a></p>
+          <footer>
+            <p>© 2026 SOCCER iD. Todos los derechos reservados. | <a href="/privacidad">Políticas de Privacidad</a></p> | <a href="/terminos-y-condiciones">Términos y condiciones del sitio</a></p>
         </footer>
     </main>
+
+    
+
+
+
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

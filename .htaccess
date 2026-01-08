@@ -1,11 +1,6 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # 1. Redirige todas las peticiones HTTP a HTTPS (recomendado para producción)
-    RewriteCond %{HTTPS} !=on
-    RewriteCond %{HTTP_HOST} !^localhost
-    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
     # 2. Si la petición NO es para un archivo que existe...
     RewriteCond %{REQUEST_FILENAME} !-f
     # 3. Y NO es para un directorio que existe...
